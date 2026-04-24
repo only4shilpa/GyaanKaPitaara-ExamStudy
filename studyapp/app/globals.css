@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-nunito: 'Nunito', sans-serif;
+  --font-crimson: 'Crimson Pro', serif;
+}
+
+body {
+  font-family: var(--font-nunito);
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-crimson); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.3s ease forwards; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.animate-pulse-dot { animation: pulse-dot 1s infinite; }
+
+/* Markdown prose in chat */
+.prose-chat p { margin-bottom: 0.5rem; }
+.prose-chat ul { list-style: disc; padding-left: 1.2rem; margin-bottom: 0.5rem; }
+.prose-chat ol { list-style: decimal; padding-left: 1.2rem; margin-bottom: 0.5rem; }
+.prose-chat strong { font-weight: 700; }
+.prose-chat h3 { font-weight: 700; margin-bottom: 0.25rem; }
